@@ -1,0 +1,4 @@
+name: BattleOfBeacons
+version: '${project.version}'
+main: battleofbeacons.BattleOfBeacons
+api-version: 1.18
