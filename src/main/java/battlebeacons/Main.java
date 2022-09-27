@@ -6,7 +6,6 @@ import org.bukkit.GameMode;
 import org.bukkit.plugin.java.JavaPlugin;
 import battlebeacons.commands.KonecHry;
 import battlebeacons.commands.VytvorTeleportera;
-import battlebeacons.listenery.*;
 import battlebeacons.lobby.Lobby;
 import battlebeacons.lobby.LobbyCreator;
 import battlebeacons.teleporter.TeleportDoAreny;
@@ -40,6 +39,5 @@ public class Main extends JavaPlugin {
         getCommand("+vytvorTeleportera").setExecutor(new VytvorTeleportera());
         getCommand("+konec").setExecutor(new KonecHry(teleportDoLoby, tymy));
     }
-    // Halo idk programování
 
 }

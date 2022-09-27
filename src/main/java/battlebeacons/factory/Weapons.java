@@ -26,4 +26,9 @@ public class Weapons {
         var sip = new ItemStack(Material.ARROW, 1);
         return sip;
     }
+
+    public ItemStack axe() {
+        var axe = new ItemStack(Material.IRON_AXE, 1);
+        return axe;
+    }
 }

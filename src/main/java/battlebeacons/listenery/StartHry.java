@@ -30,5 +30,6 @@ public class StartHry implements Listener {
             teleport.teleportPriStartuHry();
             skore.inicializace();
         }
+        event.setCancelled(true);
     }
 }

@@ -12,7 +12,7 @@ import java.util.Set;
 public final class Tym {
 
     private final Set<Player> hraci = new HashSet<>();
-    private final battlebeacons.tymy.JmenoTymu jmenoTymu;
+    private final battlebeacons.tymy.NastaveniTymu nastaveniTymu;
     private final ArmorFactory armor;
     private final Weapons weapons;
     private final Location spawnPoint;
@@ -20,9 +20,9 @@ public final class Tym {
 
     private Boolean alive = true;
 
-    public Tym(battlebeacons.tymy.JmenoTymu jmenoTymu, Location spawnPoint, Location beaconPoint) {
-        this.jmenoTymu = jmenoTymu;
-        armor = new ArmorFactory(jmenoTymu.getColor());
+    public Tym(battlebeacons.tymy.NastaveniTymu nastaveniTymu, Location spawnPoint, Location beaconPoint) {
+        this.nastaveniTymu = nastaveniTymu;
+        armor = new ArmorFactory(nastaveniTymu.getColor());
         this.spawnPoint = spawnPoint;
         this.beaconPoint = beaconPoint;
         weapons = new Weapons();
@@ -45,7 +45,7 @@ public final class Tym {
         return hraci.contains(player);
     }
 
-    public Set<Player> vratHrace() {
+    public Set<Player> getHraci() {
         return new HashSet<>(hraci);
     }
 
@@ -53,8 +53,8 @@ public final class Tym {
         hraci.forEach(hrac -> hrac.sendTitle(text, subtext, 0, convertSecToTicks(10), 0));
     }
 
-    public battlebeacons.tymy.JmenoTymu getJmenoTymu() {
-        return jmenoTymu;
+    public battlebeacons.tymy.NastaveniTymu getNastaveniTymu() {
+        return nastaveniTymu;
     }
 
     public Boolean isAlive() {

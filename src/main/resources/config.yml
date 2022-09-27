@@ -1,0 +1,95 @@
+# Misto kde je lobby a kam se hraci teleportuji po pripojeni. Definujte ho obdobne jako na nize uvedenem prikladu.
+# misto world zadajte jmeno vaseho sveta a validni souradnice.
+# LobbyLocationStartCorner:  dolni roh lobby
+# LobbyLocationEndCorner: horni roh lobby
+# oba tyto  rohy urcuji uhlopricku mistnosti od podlahy ke stropu napric mistnosti
+
+LobbyLocationStartCorner:
+  ==: org.bukkit.Location
+  world: world
+  x: -3
+  y: 7
+  z: 6
+  pitch: 0
+  yaw: 0
+
+LobbyLocationEndCorner:
+  ==: org.bukkit.Location
+  world: world
+  x: 17
+  y: -4
+  z: -4
+  pitch: 0
+  yaw: 0
+
+TeamBattleLocation_1:
+  ==: org.bukkit.Location
+  world: world
+  x: 500
+  y: 100
+  z: 570
+  pitch: 0
+  yaw: 0
+
+BeaconLocation_1:
+  ==: org.bukkit.Location
+  world: world
+  x: 500
+  y: 104
+  z: 569
+  pitch: 0
+  yaw: 0
+
+TeamBattleLocation_2:
+  ==: org.bukkit.Location
+  world: world
+  x: 500
+  y: 100
+  z: 430
+  pitch: 0
+  yaw: 0
+
+BeaconLocation_2:
+  ==: org.bukkit.Location
+  world: world
+  x: 500
+  y: 104
+  z: 431
+  pitch: 0
+  yaw: 0
+
+TeamBattleLocation_3:
+  ==: org.bukkit.Location
+  world: world
+  x: 570
+  y: 100
+  z: 500
+  pitch: 0
+  yaw: 0
+
+BeaconLocation_3:
+  ==: org.bukkit.Location
+  world: world
+  x: 570
+  y: 104
+  z: 500
+  pitch: 0
+  yaw: 0
+
+TeamBattleLocation_4:
+  ==: org.bukkit.Location
+  world: world
+  x: 430
+  y: 100
+  z: 500
+  pitch: 0
+  yaw: 0
+
+BeaconLocation_4:
+  ==: org.bukkit.Location
+  world: world
+  x: 431
+  y: 104
+  z: 500
+  pitch: 0
+  yaw: 0

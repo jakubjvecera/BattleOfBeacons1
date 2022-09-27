@@ -17,10 +17,10 @@ public class BeaconZnicen implements Listener {
     @EventHandler
     public void beaconZnicen(BlockBreakEvent event) {
         if (!tymy.hraJede()) return;
-        Location location = event.getBlock().getLocation();
         if (event.getBlock().getType() != Material.BEACON ) return;
+        Location location = event.getBlock().getLocation();
         for (var tym : tymy.vratTymy()) {
-            if (tym.getSpawnPoint().equals(location)) {
+            if (tym.getBeaconPoint().equals(location)) {
                 tym.setAlive(false);
                 tym.zprava("Vas beacon byl znicen.", "Uz se nesnazte.");
                 return;

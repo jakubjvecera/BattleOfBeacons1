@@ -13,7 +13,6 @@ public class VytvorTeleportera extends battlebeacons.commands.OperatorCommandExe
         var teleporter = world.spawn(operator.getLocation(), Villager.class);
         teleporter.setAI(false);
         teleporter.setCustomName(TeleportDoAreny.JMENO_TELEPORTERA);
-        teleporter.setInvulnerable(true);
         return true;
     }
 }

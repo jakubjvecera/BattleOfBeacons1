@@ -41,8 +41,8 @@ public final class TeleportDoAreny {
         tymy.vytvorTymy(lobbyPlayers, spawnPointy, beaconPointy);
         for (int i = 0; i < tymy.pocet(); i++) {
             Tym tym = tymy.vratTym(i);
-            vytvorBeacon(tym.getBeaconPoint());
-            for (Player player : tym.vratHrace()) {
+            vytvorBeacon(tym);
+            for (Player player : tym.getHraci()) {
                 player.teleport(tym.getSpawnPoint());
                 player.setBedSpawnLocation(tym.getSpawnPoint());
             }
@@ -50,9 +50,11 @@ public final class TeleportDoAreny {
         odpocet(lobbyPlayers);
     }
 
-    private void vytvorBeacon(Location spawnPoint) {
-        Block block = spawnPoint.getBlock();
-        block.setType(Material.BEACON);
+    private void vytvorBeacon(Tym team) {
+        Block beaconBlock = team.getBeaconPoint().getBlock();
+        beaconBlock.setType(Material.BEACON);
+        Block glassBlock = team.getBeaconPoint().clone().add(0,1,0).getBlock();
+        glassBlock.setType(team.getNastaveniTymu().getBeaconGlass());
     }
 
     private enum PointType {

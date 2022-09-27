@@ -27,6 +27,7 @@ public final class SmrtHrace implements Listener {
 
     @EventHandler
     public void smrtHrace(PlayerDeathEvent playerDeathEvent) {
+        if (!tymy.hraJede()) return;
         var player = playerDeathEvent.getEntity();
         var tym = tymy.vratTym(player);
         if (!tym.isAlive()) {
@@ -42,17 +43,17 @@ public final class SmrtHrace implements Listener {
                 tymy.vratTymy().forEach(vsechnyTymy -> vsechnyTymy.zprava("Nikdo nezvitezil", "Remiza poslednich dvou"));
             } else {
                 ziveTymy.forEach(zivyTym -> zivyTym.zprava("Vas tym zvitezil", ""));
-                tymy.vratTymy().forEach(vsechnyTymy -> vsechnyTymy.zprava("Zvitezit tym " + ziveTymy.get(0).getJmenoTymu(), ""));
+                tymy.vratTymy().forEach(vsechnyTymy -> vsechnyTymy.zprava("Zvitezit tym " + ziveTymy.get(0).getNastaveniTymu(), ""));
             }
             teleportDoLoby.teleport();
-            tymy.clear();
+            tymy.konecHry();
         }
     }
 
     private List<Tym> vratZiveTymy() {
         List<Tym> tymySZivymi = new ArrayList<>();
         for (var tym : tymy.vratTymy()) {
-            boolean zivyHracVTeamu = tym.vratHrace().stream().anyMatch(hrac -> hrac.getGameMode() != GameMode.SPECTATOR);
+            boolean zivyHracVTeamu = tym.getHraci().stream().anyMatch(hrac -> hrac.getGameMode() != GameMode.SPECTATOR);
             if (zivyHracVTeamu) {
                 tymySZivymi.add(tym);
             }

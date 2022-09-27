@@ -23,7 +23,7 @@ public class KonecHry extends battlebeacons.commands.OperatorCommandExecutor {
         tymy.vratTymy().forEach( tym -> {
             tym.zprava("Konec hry", "OP ukoncil hru");
         });
-        tymy.clear();
+        tymy.konecHry();
         return true;
     }
 }

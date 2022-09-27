@@ -1,4 +1,8 @@
-name: BattleOfBeacons
+name: BattleOfBeacons1
 version: '${project.version}'
-main: battleofbeacons.BattleOfBeacons
+main: battlebeacons.Main
 api-version: 1.18
+
+commands:
+  +vytvorTeleportera:
+  +konec:
