@@ -41,5 +41,4 @@ public class Main extends JavaPlugin {
         getCommand("+vytvorTeleportera").setExecutor(new VytvorTeleportera());
         getCommand("+konec").setExecutor(new KonecHry(teleportDoLoby, tymy));
     }
-
 }

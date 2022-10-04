@@ -18,9 +18,10 @@ public class DamageByPlayerInLobbyToTeleporter implements Listener {
         if (!(utocnik instanceof Player) ) return;
         Entity zraneny = event.getEntity();
         if (!(zraneny instanceof  Player)) return;
+        Villager villager = (Villager) zraneny;
 
-        if (zraneny instanceof Villager && zraneny.getName().equals("Team Battle Teleporter")){
-            ((Player) zraneny).addPotionEffect(new PotionEffect(PotionEffectType.HEAL,12,255,true,false));
+        if (villager.getName().equals("Team Battle Teleporter")){
+            villager.addPotionEffect(new PotionEffect(PotionEffectType.HEAL,5,255));
         }
     }
 }
