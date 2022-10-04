@@ -9,7 +9,7 @@ import battlebeacons.tymy.Tymy;
 
 public class OdpocetZakazPohybu implements Listener {
 
-    private final Tymy tymy;
+    private final  Tymy tymy;
     private final TeleportDoAreny teleportDoHry;
 
     public OdpocetZakazPohybu(Tymy tymy, TeleportDoAreny teleportDoHry) {
