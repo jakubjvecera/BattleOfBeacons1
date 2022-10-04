@@ -9,16 +9,18 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public abstract class PlayerDamageByPlayerListener implements Listener {
+public class DamageByPlayerInLobbyToTeleporter implements Listener {
+
 
     @EventHandler
-    public void damage(EntityDamageByEntityEvent event) {
+    public void damageByPlayerInLobbyToTeleporter(EntityDamageByEntityEvent event){
         Entity utocnik = event.getDamager();
         if (!(utocnik instanceof Player) ) return;
         Entity zraneny = event.getEntity();
         if (!(zraneny instanceof  Player)) return;
-        playerDamaged((Player) utocnik, (Player) zraneny, event.getFinalDamage(), event);
-    }
 
-    public abstract void playerDamaged(Player utocnik, Player zraneny, double damage, EntityDamageByEntityEvent event);
+        if (zraneny instanceof Villager && zraneny.getName().equals("Team Battle Teleporter")){
+            ((Player) zraneny).addPotionEffect(new PotionEffect(PotionEffectType.HEAL,12,255,true,false));
+        }
+    }
 }

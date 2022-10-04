@@ -1,5 +1,6 @@
 package battlebeacons;
 
+import battlebeacons.listenery.DamageByPlayerInLobbyToTeleporter;
 import battlebeacons.tymy.Skore;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -34,6 +35,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new battlebeacons.listenery.RespawnHrace(tymy), this);
         getServer().getPluginManager().registerEvents(new battlebeacons.listenery.SmrtHrace(tymy, skore, teleportDoLoby), this);
         getServer().getPluginManager().registerEvents(new battlebeacons.listenery.BeaconZnicen(tymy), this);
+        getServer().getPluginManager().registerEvents(new DamageByPlayerInLobbyToTeleporter(), this);
 
         //commandy
         getCommand("+vytvorTeleportera").setExecutor(new VytvorTeleportera());

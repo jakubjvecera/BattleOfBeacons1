@@ -1,6 +1,5 @@
 package battlebeacons.listenery;
 
-import battlebeacons.tymy.Tym;
 import battlebeacons.tymy.Tymy;
 import org.bukkit.Location;
 import org.bukkit.Material;
