@@ -17,7 +17,7 @@ public class DamageByPlayerInLobbyToTeleporter implements Listener {
         Entity utocnik = event.getDamager();
         if (!(utocnik instanceof Player) ) return;
         Entity zraneny = event.getEntity();
-        if (!(zraneny instanceof  Player)) return;
+        if (!(zraneny instanceof  Villager)) return;
         Villager villager = (Villager) zraneny;
 
         if (villager.getName().equals("Team Battle Teleporter")){
