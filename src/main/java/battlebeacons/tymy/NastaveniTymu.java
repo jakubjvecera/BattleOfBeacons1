@@ -8,7 +8,7 @@ public enum NastaveniTymu {
     REDS("Reds", Color.RED, ChatColor.RED, Material.RED_STAINED_GLASS_PANE),
     BLUES("Blues", Color.BLUE, ChatColor.BLUE, Material.BLUE_STAINED_GLASS_PANE),
     GREENS("Greens", Color.GREEN, ChatColor.GREEN, Material.GREEN_STAINED_GLASS_PANE),
-    WHITES("Whites", Color.WHITE, ChatColor.WHITE, Material.WHITE_STAINED_GLASS_PANE);
+    YELLOWS("Yellows", Color.YELLOW, ChatColor.YELLOW, Material.YELLOW_STAINED_GLASS_PANE);
 
     private final String jmeno;
     private final Color color;
