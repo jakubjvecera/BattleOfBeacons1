@@ -17,6 +17,7 @@ public class BeaconZnicen implements Listener {
     public void beaconZnicen(BlockBreakEvent event) {
         if (!tymy.hraJede()) return;
         if (event.getBlock().getType() != Material.BEACON ) return;
+        event.getBlock().getDrops().clear();
         Location location = event.getBlock().getLocation();
         for (var tym : tymy.vratTymy()) {
             if (tym.getBeaconPoint().equals(location)) {

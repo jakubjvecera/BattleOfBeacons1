@@ -32,15 +32,35 @@ public class Trader implements CommandExecutor {
         trader.setCustomName(JMENO_OBCHODNIKA);
         trader.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 1000000000, 999999999, true));
 
-        MerchantRecipe enderPearl = new MerchantRecipe(veciNaProdej.enderpearl(), 1);
+        //veci pro obchodovani
+        MerchantRecipe enderPearl = new MerchantRecipe(veciNaProdej.enderpearl(), 999);
         enderPearl.addIngredient(new ItemStack(Material.EMERALD, 3));
 
-        MerchantRecipe wool = new MerchantRecipe(veciNaProdej.wool(), 1);
+        MerchantRecipe wool = new MerchantRecipe(veciNaProdej.wool(), 999);
         wool.addIngredient(new ItemStack(Material.IRON_INGOT, 4));
 
+        MerchantRecipe gladiatorSword = new MerchantRecipe(veciNaProdej.vyrobGladiatorSword(), 999);
+        gladiatorSword.addIngredient(new ItemStack(Material.GOLD_NUGGET, 5));
 
-        trader.setRecipes(Lists.newArrayList(enderPearl,wool));
+        MerchantRecipe gladiatorShield = new MerchantRecipe(veciNaProdej.vyrobStit(), 999);
+        gladiatorShield.addIngredient(new ItemStack(Material.GOLD_NUGGET, 7));
+
+        MerchantRecipe gladiatorHelmet = new MerchantRecipe(veciNaProdej.vyrobGladiatorHelmet(), 999);
+        gladiatorHelmet.addIngredient(new ItemStack(Material.GOLD_NUGGET, 3));
+
+        MerchantRecipe gladiatorChestplate = new MerchantRecipe(veciNaProdej.vyrobGladiatorChestplate(), 999);
+        gladiatorChestplate.addIngredient(new ItemStack(Material.GOLD_NUGGET, 3));
+
+        MerchantRecipe gladiatorLeggings = new MerchantRecipe(veciNaProdej.vyrobGladiatorLeggins(), 999);
+        gladiatorLeggings.addIngredient(new ItemStack(Material.GOLD_NUGGET, 3));
+
+        MerchantRecipe gladiatorBoots = new MerchantRecipe(veciNaProdej.vyrobGladiatorSword(), 999);
+        gladiatorBoots.addIngredient(new ItemStack(Material.GOLD_NUGGET, 3));
+
+        trader.setRecipes(Lists.newArrayList(enderPearl, wool, gladiatorBoots, gladiatorChestplate, gladiatorHelmet, gladiatorLeggings,
+                gladiatorSword, gladiatorShield));
 
         return true;
     }
-}//aj
+}
+//aj

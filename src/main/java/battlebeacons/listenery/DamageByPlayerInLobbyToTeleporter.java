@@ -1,5 +1,6 @@
 package battlebeacons.listenery;
 
+import battlebeacons.teleporter.TeleportDoAreny;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Villager;
@@ -20,8 +21,8 @@ public class DamageByPlayerInLobbyToTeleporter implements Listener {
         if (!(zraneny instanceof  Villager)) return;
         Villager villager = (Villager) zraneny;
 
-        if (villager.getName().equals("Team Battle Teleporter")){
-            villager.addPotionEffect(new PotionEffect(PotionEffectType.HEAL,5,255));
+        if (villager.getName().equals(TeleportDoAreny.JMENO_TELEPORTERA)){
+            villager.addPotionEffect(new PotionEffect(PotionEffectType.HEAL,5,255,true,false,false));
         }
     }
 }
